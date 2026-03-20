@@ -1,0 +1,22 @@
+public class LibraryFee {
+
+    public static double libraryFee(int daysLate, boolean isStudent) {
+        double total;
+
+        // Tính phí theo số ngày trễ
+        if (daysLate == 0) {
+            total = 0;
+        } else if (daysLate <= 5) {
+            total = daysLate * 2;
+        } else {
+            total = daysLate * 5;
+        }
+
+        // Giảm 50% nếu là sinh viên
+        if (isStudent) {
+            total = total * 0.5;
+        }
+
+        return total;
+    }
+}
